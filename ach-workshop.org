@@ -1,0 +1,54 @@
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [presentation,listings]
+#+BEAMER_THEME: Malmoe [height=20pt]
+#+BEAMER_COLOR_THEME: seahorse
+#+OPTIONS: H:2
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BEAMER_opt(Opt)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 0.0 :ETC
+#+LATEX_HEADER: \usepackage{listings}
+#+TITLE: Applied Crypto Hardening Workshop
+#+Author:
+#+DATE:
+
+* Workshop Requirements
+** 
+- eine VM mit deiner Lieblingsdistro
+- umgang mit dem packet manager (apt-get, yum...)
+- umgang mit einem Editor deiner Wahl
+
+* Theory
+** CipherStringB
+#+BEGIN_SRC bash
+EDH+CAMELLIA:EDH+aRSA:EECDH+aRSA+AESGCM:EECDH+aRSA+SHA384 \
+:EECDH+aRSA+SHA256:EECDH:+CAMELLIA256:+AES256:+CAMELLIA128 \
+:+AES128:+SSLv3:!aNULL:!eNULL:!LOW:!3DES:!MD5:!EXP:!PSK \
+:!DSS:!RC4:!SEED:!ECDSA:CAMELLIA256-SHA:AES256-SHA:CAMELLIA128-SHA:AES128-SHA
+#+END_SRC
+
+** Forward Secrecy
+- Was ist das?
+- Erklaeren
+
+** Keylength
+- ist länger besser?
+
+** ECC
+- aso
+
+** DH Key Exchanges
+   
+* Services
+- Apache
+- MySQL
+- Dovecot
+- Postfix
+- OpenSSH
+- OpenVPN
+
+* Tools
+** SSL
+** Key length
+** RNGs
+
+
