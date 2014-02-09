@@ -5,7 +5,7 @@ Bei diesem Workshop werden wir gemeinsam die aktuellen Best Practices zum Konfig
 
 Description:
 Begleiten werden euch durch den Workshop Christian Mock und Berg San, beide CoAuthoren vom gleichnamigen Paper Applied Crypto Hardening - http://bettercrypto.org.
-Das Paper entstand durch den Bedarf eines aktuellen, soliden und gut untersuchten und durchdachten Leitfadens zum Konfigurieren von Cipher-Suites und deren Parametern in der Post-Snowden-Ära.
+Das Paper entstand durch den Bedarf eines aktuellen, soliden, gut untersuchten und durchdachten Leitfadens zum Konfigurieren von Cipher-Suites und deren Parametern in der Post-Snowden-Ära.
 
 
 Agenda: 
