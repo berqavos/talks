@@ -1,7 +1,7 @@
 Workshop Applied Crypto Hardening
 
 Abstract: 
-Crypto Hardening (http://bettercrypto.org) und entstand durch den Bedarf eines aktuellen, soliden und gut untersuchten und durchdachten Leitfadens zum Konfigurieren von Cipher-Suites und deren Parametern in der Post-Snowden-Ära.
+Applied Crypto Hardening (http://bettercrypto.org) und entstand durch den Bedarf eines aktuellen, soliden und gut untersuchten und durchdachten Leitfadens zum Konfigurieren von Cipher-Suites und deren Parametern in der Post-Snowden-Ära.
 
 Description:
 Begleiten werden euch durch den Workshop Chrisitan Mock und Berg San, beide CoAuthoren vom gleichnamigen Paper.
