@@ -1,6 +1,6 @@
 Workshop Applied Crypto Hardening
 
-Bei diesem Workshop geht es um die Härtung und Best Practices der komplexen Crypto-Ciphers und deren Parameter. Es werden euch durch den Workshop Christian Mock und Berg San, beide  Security Engineers und CoAuthoren vom gleichnamigen Paper Applied Crypto Hardening (http://bettercrypto.org), begleiten. Gemeinsam werden wir von einigen Services die jeweiligen Crypto-Einstellungen optimieren und testen. 
+Bei diesem Workshop geht es um die Härtung und Best Practices der Crypto-Ciphers und deren Parameter. Es werden euch durch den Workshop Christian Mock und Berg San, beide CoAuthoren vom gleichnamigen Paper Applied Crypto Hardening (http://bettercrypto.org), begleiten.  
 
 Voraussetzungen:
 - Eigener Laptop mit einer Linux VM 
