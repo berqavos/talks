@@ -8,17 +8,61 @@
 #+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 0.0 :ETC
 #+LATEX_HEADER: \usepackage{listings}
 #+TITLE: Applied Crypto Hardening Workshop
-#+Author:
+#+Author: berq
 #+DATE:
 
-* Workshop Requirements
-** 
-- eine VM mit deiner Lieblingsdistro
-- umgang mit dem packet manager (apt-get, yum...)
-- umgang mit einem Editor deiner Wahl
 
-* Theory
-** CipherStringB
+* Agenda
+Warum? \
+Ein wenig Theorie \
+Hardening Ciphersuites
+Konfiguration von Services
+Q&A
+
+* Warum?
+
+* Theorie
+Block vs Stream Cipher (AES vs RC4)
+Key Exchange (DH)
+Public Key Enryption (TLS,GPG)
+Hash Functions (MD5,SHA2)
+Message Authentication Codes (SHA2)
+Authenticated Encryption with Associates Data (GCM SHA384)
+Keylength (128bit vs 256bit)
+Forward Secrecy 
+ECC
+
+* openssl cipher suite schreibweise
+| Key Exchange Authentication | Authentication | Cipher | Mac    |
+| EDH                         | RSA            | AES256 | SHA256 |
+| EDH                         | RSA            | AESGCM | SHA384 |
+
+* CipherString A
+Starke Ciphers jedoch weniger Clients
+TLS 1.2
+Perfect forward secrecy / ephermal DH
+Starke MACs (SHA2)
+#+BEGIN_SRC bash
+EDH+aRSA+AES256:EECDH+aRSA+AES
+256:!SSLv3
+#+END_SRC
+
+* Kompatibilität CipherA
+Win7/Win8.x
+OpenSSL >= 1.0.1e
+Safari 6 ios 6.0.1
+Safari 7 OS X 10.9
+
+
+* CipherStringB
+Nicht so starke Ciphers jedoch mehr Clients
+TLS 1.2, TLS 1.1, TLS 1.0
+Perfect forward secrecy / ephermal DH
+MAC SHA1 ... ja aber was mit 2^63 Ops Kolliosionen?
+
+
+* CipherString B
+Mehr Clients == mehr Platz
 #+BEGIN_SRC bash
 EDH+CAMELLIA:EDH+aRSA:EECDH+aRSA+AESGCM:EECDH+aRSA+SHA384 \
 :EECDH+aRSA+SHA256:EECDH:+CAMELLIA256:+AES256:+CAMELLIA128 \
@@ -26,18 +70,8 @@ EDH+CAMELLIA:EDH+aRSA:EECDH+aRSA+AESGCM:EECDH+aRSA+SHA384 \
 :!DSS:!RC4:!SEED:!ECDSA:CAMELLIA256-SHA:AES256-SHA:CAMELLIA128-SHA:AES128-SHA
 #+END_SRC
 
-** Forward Secrecy
-- Was ist das?
-- Erklaeren
+* Genug Theorie ran an das Gerät
 
-** Keylength
-- ist länger besser?
-
-** ECC
-- aso
-
-** DH Key Exchanges
-   
 * Services
 - Apache
 - MySQL
@@ -46,9 +80,24 @@ EDH+CAMELLIA:EDH+aRSA:EECDH+aRSA+AESGCM:EECDH+aRSA+SHA384 \
 - OpenSSH
 - OpenVPN
 
-* Tools
-** SSL
-** Key length
-** RNGs
+* Check via Internet
+Webserver: https://ssllabs.com
+Mailserver: https://starttls.info
+XMPP: https://xmpp.net
+SSH Key Check: http://factorable.net/keycheck.html
+Browser: https://howsmyssl.com
+
+* Check via Commandline
+cipherscan: https://github.com/MacLemon/cipherscan
+sslyze: https://github.com/iSECPartners/sslyze
+sslcan: apt-get install sslscan
+...
+nmap -script=ssl-enum || ssl-cert 1.1.1.1 -p443
+openssl s_client -connect http://host:443-hardening-workshop.pdf
+
+* Kontakt
+W: http://bettercrypto.org
+M: http://lists.cert.at/cgi-bin/mailman/listinfo/ach
+G: https://github.com/BetterCrypto/Applied-Crypto-Hardening/
 
 
