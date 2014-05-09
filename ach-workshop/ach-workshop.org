@@ -1,3 +1,5 @@
+* Workshop Applied Crypto Hardening
+
 * Agenda
 Warum?
 Ein wenig Theorie 
@@ -25,6 +27,7 @@ ECC
 | EDH                         | RSA            | AES256 | SHA256 |
 | EDH                         | RSA            | AESGCM | SHA384 |
 
+
 * CipherString A
 Starke Ciphers jedoch weniger Clients
 TLS 1.2
@@ -45,7 +48,7 @@ Safari 7 OS X 10.9
 Nicht so starke Ciphers jedoch mehr Clients
 TLS 1.2, TLS 1.1, TLS 1.0
 Perfect forward secrecy / ephermal DH
-MAC SHA1 ... ja aber was mit 2^63 Ops Kolliosionen?
+MAC SHA1 ... ja aber was mit 2^63 Ops Kollisionen?
 
 
 * CipherString B
@@ -80,7 +83,7 @@ sslyze:     https://github.com/iSECPartners/sslyze
 sslcan:     apt-get install sslscan
 ...
 nmap -script=ssl-enum || ssl-cert 1.1.1.1 -p443
-openssl s_client -connect http://host:443-hardening-workshop.pdf
+openssl s_client -connect http://host:443
 
 * Kontakt
 W: http://bettercrypto.org
