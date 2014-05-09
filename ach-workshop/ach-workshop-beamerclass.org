@@ -1,3 +1,18 @@
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [presentation]
+#+BEAMER_THEME: Malmoe [height=24pt]
+#+BEAMER_COLOR_THEME: seahorse
+#+OPTIONS: H:2
+#+COLUMNS: %50ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BEAMER_opt(Opt)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 0.0 :ETC
+
+#+LaTeX_HEADER: \usepackage[scaled=0.9]{helvet}\usepackage{courier}\renewcommand{\labelitemi}{}
+
+#+TITLE: Applied Crypto Hardening Workshop
+#+Author: berq
+#+DATE:
+
 * Agenda
 Warum?
 Ein wenig Theorie 
@@ -19,9 +34,7 @@ Forward Secrecy
 ECC
 
 * openssl cipher suite schreibweise
-
 | Key Exchange Authentication | Authentication | Cipher | Mac    |
-|-----------------------------+----------------+--------+--------|
 | EDH                         | RSA            | AES256 | SHA256 |
 | EDH                         | RSA            | AESGCM | SHA384 |
 
