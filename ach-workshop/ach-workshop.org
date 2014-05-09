@@ -1,24 +1,26 @@
 * Workshop Applied Crypto Hardening
 
+https://github.com/berq/talks/ach-workshop/ach-workshop.org
+
 * Agenda
-Warum?
-Ein wenig Theorie 
-Hardening Ciphersuites
-Konfiguration von Services
-Q&A
+** Warum?
+** Ein wenig Theorie 
+** Hardening Ciphersuites
+** Konfiguration von Services
+** Q&A
 
 * Warum?
 
 * Theorie
-Block vs Stream Cipher (AES vs RC4)
-Key Exchange (DH)
-Public Key Enryption (TLS,GPG)
-Hash Functions (MD5,SHA2)
-Message Authentication Codes (SHA2)
-Authenticated Encryption with Associates Data (GCM SHA384)
-Keylength (128bit vs 256bit)
-Forward Secrecy 
-ECC
+- Block vs Stream Cipher (AES vs RC4)
+- Key Exchange (DH)
+- Public Key Enryption (TLS,GPG)
+- Hash Functions (MD5,SHA2)
+- Message Authentication Codes (SHA2)
+- Authenticated Encryption with Associates Data (GCM SHA384)
+- Keylength (128bit vs 256bit)
+- Forward Secrecy 
+- ECC
 
 * openssl cipher suite schreibweise
 
@@ -82,7 +84,7 @@ cipherscan: https://github.com/MacLemon/cipherscan
 sslyze:     https://github.com/iSECPartners/sslyze
 sslcan:     apt-get install sslscan
 ...
-nmap -script=ssl-enum || ssl-cert 1.1.1.1 -p443
+nmap -script=ssl-enum-ciphers || ssl-cert 1.1.1.1 -p443
 openssl s_client -connect http://host:443
 
 * Kontakt
