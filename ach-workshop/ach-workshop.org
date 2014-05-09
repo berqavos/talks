@@ -1,7 +1,5 @@
 * Workshop Applied Crypto Hardening
 
-https://github.com/berq/talks/ach-workshop/ach-workshop.org
-
 * Agenda
 ** Warum?
 ** Ein wenig Theorie 
