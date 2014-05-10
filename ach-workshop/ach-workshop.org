@@ -7,18 +7,20 @@
 ** Konfiguration von Services
 ** Q&A
 
+
 * Warum?
 
 * Theorie
 - Block vs Stream Cipher (AES vs RC4)
 - Key Exchange (DH)
-- Public Key Enryption (TLS,GPG)
+- Public Key Encryption (TLS,GPG)
 - Hash Functions (MD5,SHA2)
 - Message Authentication Codes (SHA2)
 - Authenticated Encryption with Associates Data (GCM SHA384)
 - Keylength (128bit vs 256bit)
-- Forward Secrecy 
+- Forward Secrecy (ephermal) 
 - ECC
+
 
 * openssl cipher suite schreibweise
 
@@ -37,19 +39,18 @@ Starke MACs (SHA2)
 EDH+aRSA+AES256:EECDH+aRSA+AES256:!SSLv3
 #+END_SRC
 
+
 * Kompatibilität CipherA
 Win7/Win8.x
 OpenSSL >= 1.0.1e
 Safari 6 ios 6.0.1
 Safari 7 OS X 10.9
 
-
-* CipherStringB
+* CipherString B
 Nicht so starke Ciphers jedoch mehr Clients
 TLS 1.2, TLS 1.1, TLS 1.0
 Perfect forward secrecy / ephermal DH
-MAC SHA1 ... ja aber was mit 2^63 Ops Kollisionen?
-
+MAC SHA1 
 
 * CipherString B
 Mehr Clients == mehr Platz
@@ -62,6 +63,7 @@ EDH+CAMELLIA:EDH+aRSA:EECDH+aRSA+AESGCM:EECDH+aRSA+SHA384 \
 
 * Genug Theorie ran an das Gerät
 
+
 * Services
 - Apache
 - MySQL
@@ -69,6 +71,7 @@ EDH+CAMELLIA:EDH+aRSA:EECDH+aRSA+AESGCM:EECDH+aRSA+SHA384 \
 - Postfix
 - OpenSSH
 - OpenVPN
+  
 
 * Check via Internet
 Webserver:     https://ssllabs.com
@@ -77,6 +80,7 @@ XMPP:          https://xmpp.net
 SSH Key Check: http://factorable.net/keycheck.html
 Browser:       https://howsmyssl.com
 
+
 * Check via Commandline
 cipherscan: https://github.com/MacLemon/cipherscan
 sslyze:     https://github.com/iSECPartners/sslyze
@@ -84,6 +88,7 @@ sslcan:     apt-get install sslscan
 ...
 nmap -script=ssl-enum-ciphers || ssl-cert 1.1.1.1 -p443
 openssl s_client -connect http://host:443
+
 
 * Kontakt
 W: http://bettercrypto.org
