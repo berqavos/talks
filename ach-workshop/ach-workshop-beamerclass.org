@@ -1,34 +1,42 @@
-* Workshop Applied Crypto Hardening
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [presentation]
+#+BEAMER_THEME: Malmoe [height=24pt]
+#+BEAMER_COLOR_THEME: seahorse
+#+OPTIONS: H:2
+#+COLUMNS: %50ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BEAMER_opt(Opt)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 0.0 :ETC
+
+#+LaTeX_HEADER: \usepackage[scaled=0.9]{helvet}\usepackage{courier}\renewcommand{\labelitemi}{}
+
+#+TITLE: Applied Crypto Hardening Workshop
+#+Author: berq
+#+DATE:
 
 * Agenda
-** Warum?
-** Ein wenig Theorie 
-** Hardening Ciphersuites
-** Konfiguration von Services
-** Q&A
-
+Warum?
+Ein wenig Theorie 
+Hardening Ciphersuites
+Konfiguration von Services
+Q&A
 
 * Warum?
 
 * Theorie
-- Block vs Stream Cipher (AES vs RC4)
-- Key Exchange (DH)
-- Public Key Encryption (TLS,GPG)
-- Hash Functions (MD5,SHA2)
-- Message Authentication Codes (SHA2)
-- Authenticated Encryption with Associates Data (GCM SHA384)
-- Keylength (128bit vs 256bit)
-- Forward Secrecy (ephermal) 
-- ECC
-
+Block vs Stream Cipher (AES vs RC4)
+Key Exchange (DH)
+Public Key Enryption (TLS,GPG)
+Hash Functions (MD5,SHA2)
+Message Authentication Codes (SHA2)
+Authenticated Encryption with Associates Data (GCM SHA384)
+Keylength (128bit vs 256bit)
+Forward Secrecy 
+ECC
 
 * openssl cipher suite schreibweise
-
 | Key Exchange Authentication | Authentication | Cipher | Mac    |
-|-----------------------------+----------------+--------+--------|
 | EDH                         | RSA            | AES256 | SHA256 |
 | EDH                         | RSA            | AESGCM | SHA384 |
-
 
 * CipherString A
 Starke Ciphers jedoch weniger Clients
@@ -39,18 +47,19 @@ Starke MACs (SHA2)
 EDH+aRSA+AES256:EECDH+aRSA+AES256:!SSLv3
 #+END_SRC
 
-
 * Kompatibilität CipherA
 Win7/Win8.x
 OpenSSL >= 1.0.1e
 Safari 6 ios 6.0.1
 Safari 7 OS X 10.9
 
-* CipherString B
+
+* CipherStringB
 Nicht so starke Ciphers jedoch mehr Clients
 TLS 1.2, TLS 1.1, TLS 1.0
 Perfect forward secrecy / ephermal DH
-MAC SHA1 
+MAC SHA1 ... ja aber was mit 2^63 Ops Kolliosionen?
+
 
 * CipherString B
 Mehr Clients == mehr Platz
@@ -63,7 +72,6 @@ EDH+CAMELLIA:EDH+aRSA:EECDH+aRSA+AESGCM:EECDH+aRSA+SHA384 \
 
 * Genug Theorie ran an das Gerät
 
-
 * Services
 - Apache
 - MySQL
@@ -71,7 +79,6 @@ EDH+CAMELLIA:EDH+aRSA:EECDH+aRSA+AESGCM:EECDH+aRSA+SHA384 \
 - Postfix
 - OpenSSH
 - OpenVPN
-  
 
 * Check via Internet
 Webserver:     https://ssllabs.com
@@ -80,15 +87,13 @@ XMPP:          https://xmpp.net
 SSH Key Check: http://factorable.net/keycheck.html
 Browser:       https://howsmyssl.com
 
-
 * Check via Commandline
 cipherscan: https://github.com/MacLemon/cipherscan
 sslyze:     https://github.com/iSECPartners/sslyze
 sslcan:     apt-get install sslscan
 ...
-nmap -script=ssl-enum-ciphers || ssl-cert 1.1.1.1 -p443
-openssl s_client -connect http://host:443
-
+nmap -script=ssl-enum || ssl-cert 1.1.1.1 -p443
+openssl s_client -connect http://host:443-hardening-workshop.pdf
 
 * Kontakt
 W: http://bettercrypto.org
