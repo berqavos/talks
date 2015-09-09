@@ -1,0 +1,52 @@
+#+TITLE:     Die Präsentation
+#+AUTHOR:    Berg San 
+#+EMAIL:     bs@
+#+DATE:      
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+LANGUAGE:  de
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+BEAMER_FRAME_LEVEL: 2
+#+LaTeX_CLASS_OPTIONS: [bigger] 
+#+COLUMNS: %40ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
+#+LATEX_HEADER: \mode<beamer>{\usetheme{Singapore}\usecolortheme{dove}\usepackage[sfdefault,thin,scale=1.2]{roboto}}
+
+* first main topic 
+** text
+***  
+Text
+
+** text
+***  
+Text
+
+** text
+***  
+Text
+
+** text
+***  
+Text
+
+* second main topic
+** text
+***  
+Text
+
+
+** text
+***  
+Text 2
+
+** text
+***  
+for i in ${}
+
